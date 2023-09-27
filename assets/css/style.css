@@ -2,16 +2,39 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+:root {
+    --button-background: rgb(99, 4, 99);
+    --alt-color: rgb(137, 0, 150);
+    --button-text: white;
+    --correct-color: lightgrey;
+    --show-start: block;
+    --show-end: block;
+    --show-question: block;
+    --show-correct: block;
+}
 
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 15px;
+}
 
+#previousScores {
+    color: var(--alt-color);
+}
+
+/* #time {
+
+} */
 
 #startCard {
+    display: var(--show-start);
     text-align: center;
-    display: block;
 }
 
 #startCard p {
     font-size: 16px;
+    margin: 0px 20%;
 }
 
 #startCard button {
@@ -20,31 +43,95 @@
     padding: 8px 16px;
     border-radius: 5px;
     border: none;
-    background-color: purple;
-    color: white;
+    background-color: var(--button-background);
+    color: var(--button-text);
+}
+
+#startCard button:hover {
+    background-color: var(--alt-color);
+    cursor: pointer;
 }
 
 #questionCard {
-    display: block;
-    margin: 0 25%;
+    display: var(--show-question);
 }
 
 #question {
+    display: block;
     text-align: center;
+    margin: 0 25%;
 }
 
 #answers {
-    float: left;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     list-style: upper-alpha;
     list-style-position: inside;
+    font-size: 16px;
     padding: 0%;
+    /* margin-right: 100%; */
 }
 
 #answers li {
-    margin: 3px 0px;
-    padding: 3px;
+    margin: 3px 50% 3px 25%;
+    padding: 5px;
     padding-right: 40px;
     border-radius: 5px;
-    background-color: purple;
-    color: white;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    /* max-height: 50px; */
+    text-align: start;
 }
+
+#answers li:hover {
+    background-color: var(--alt-color);
+    cursor: pointer;
+}
+
+#endCard {
+    display: var(--show-end);
+    text-align: center;
+    margin: 0px 25%;
+}
+
+#endCard h2 {
+    margin: 10px;
+}
+
+#endCard p {
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 15%;
+}
+
+#submit {
+    font-size: 16px;
+    margin: 3px;
+    padding: 4px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--button-background);
+    color: var(--button-text);
+}
+
+#submit:hover {
+    background-color: var(--alt-color);
+    cursor: pointer;
+}
+
+#correct {
+    display: var(--show-correct);
+    text-indent: 10px;
+    font-style: italic;
+    /* max-height: 20px; */
+    margin-left: 25%;
+    margin-right: 20%;
+    font-size: 20px;
+    border-top: 2px solid var(--correct-color);
+    color: var(--correct-color);
+    /* margin: 10px 100%; */
+    /* margin: 100px 100px; */
+}
+

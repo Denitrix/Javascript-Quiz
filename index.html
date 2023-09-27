@@ -12,7 +12,7 @@
                 View High Scores
             </div>
             <div id="time">
-                Time: 
+                Time: 75
             </div>
         </header>
         <div id="startCard">
@@ -26,12 +26,23 @@
         <div id="questionCard">
             <h1 id="question">Temp temp temp temp temp temp temp temp?</h1>
             <ol id="answers">
-                <li id="answer1">temp</li>                
-                <li id="answer2">temptemp</li>                
-                <li id="answer3">temptemptemp</li>                
-                <li id="answer4">temptemptemptemp</li>                
+                <li data-correct="false">temp</li>                
+                <li data-correct="false">temptemp</li>                
+                <li data-correct="false">temptemptemp</li>                
+                <li data-correct="false">temptemptemptemp</li>                
             </ol>
         </div>
+        <div id="endCard">
+            <h2>Quiz Complete</h2>
+            <p>Your final score is: 0</p>
+            <form id="submitScore">
+                <label>Enter Initials: </label>
+                <input type="text" id="initials" name="initials">
+                <input type="submit" id="submit" value="Submit">
+            </form>
+        </div>
+        <b></b>
+        <div id="correct">Incorrect</div>
         <script src="script.js"></script>
     </body>
 </html>
