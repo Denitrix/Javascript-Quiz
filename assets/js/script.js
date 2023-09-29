@@ -1,5 +1,6 @@
 var startCard = document.querySelector("#startCard");
 var startButton = startCard.children[2];
+var timerEl = document.querySelector("#time");
 var questionCard = document.querySelector("#questionCard");
 var question = document.querySelector("#question");
 var answers =document.querySelector("#answers");
@@ -8,20 +9,31 @@ var answer2 = answers.children[1];
 var answer3 = answers.children[2];
 var answer4 = answers.children[3];
 var endCard = document.querySelector("#endCard");
+var finalScore = document.querySelector("#endCard").children[1];
 var correctDisplay = document.querySelector("#correct");
-var unusedQuestions = [1,2,3,4,5]
+var unusedQuestions = [1,2,3,4,5];
+var score = 75;
+var scoreTimer = null;
 
 function init() {
     startCard.setAttribute("style", "display:block");
     questionCard.setAttribute("style", "display:none");
     endCard.setAttribute("style", "display:none");
     correctDisplay.setAttribute("style", "display:none");
+    timerEl.textContent = "Time: " + score;
 }
 
 function startQuiz() {
     startCard.setAttribute("style", "display:none");
     questionCard.setAttribute("style", "display:block");
+    scoreTimer = setInterval(timer,1000);
     randomQuestion();
+}
+
+//TODO: add timerEl functionality
+function timer() {
+    score -= 1;
+    timerEl.textContent = "Time: " + score;
 }
 
 function randomQuestion() {
@@ -48,7 +60,12 @@ function randomQuestion() {
 function endQuiz() {
     endCard.setAttribute("style", "display:block");
     questionCard.setAttribute("style", "display:none");
+    timerEl.textContent = "Time: " + score;
+    clearInterval(scoreTimer);
+    finalScore.textContent= "Your final score is: " + score;
 }
+
+//TODO: add submit score functionality
 
 function checkAnswer(event) {
     var answer = event.target;
@@ -56,9 +73,13 @@ function checkAnswer(event) {
     if (answer.dataset.correct === "true") {
         correctDisplay.setAttribute("style", "display:block");
         correctDisplay.textContent = "Correct";
+        //TODO: make correctDisplay dissapear after 3 seconds
     } else {
         correctDisplay.setAttribute("style", "display:block");
         correctDisplay.textContent = "Incorrect";
+        //TODO make incorrect answer subtract 10 from score
+        score -= 10
+        timerEl.textContent = "Time: " + score;
     }
     randomQuestion();
 }
