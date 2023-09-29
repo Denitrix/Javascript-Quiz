@@ -20,7 +20,10 @@
             
 
             function getScores() {
-                var scores = localStorage.getItem("scores");
+                var scores = JSON.parse(localStorage.getItem("scores"));
+                /* while (scores.length > 10) {
+                    scores.pop();
+                } */
                 for (i = 0; i < scores.length; i ++) {
                     var scoreEl = document.createElement("li");
                     scoreEl.textContent = scores[i];
