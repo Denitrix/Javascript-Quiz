@@ -5,6 +5,7 @@
 :root {
     --primary: rgb(99, 4, 99);
     --secondary: rgb(137, 0, 150);
+    --secondaryTransluscent: rgb(137, 0, 150, 0.3);
     --tertiary: lightgrey;
     --text: black;
     --button-text: white;
@@ -24,6 +25,7 @@ header {
 
 #previousScores {
     color: var(--secondary);
+    text-decoration: none;
 }
 
 /* #time {
@@ -138,3 +140,36 @@ header {
     /* margin: 100px 100px; */
 }
 
+#scoresCard {
+    display: block;
+    margin: 5% 30% 0%;
+
+}
+
+#scoresCard ol{
+    padding: 0%;
+}
+
+#scores li {
+    max-width: 140px;
+    margin: 3px;
+    background-color: var(--secondaryTransluscent);
+    list-style-position: inside;
+    /* text-align: start; */
+}
+
+.btn {
+    font-size: 20px;
+    margin: 3px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--button-text);
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+    cursor: pointer;
+}

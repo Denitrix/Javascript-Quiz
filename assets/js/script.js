@@ -30,7 +30,6 @@ function startQuiz() {
     randomQuestion();
 }
 
-//TODO: add timerEl functionality
 function timer() {
     score -= 1;
     timerEl.textContent = "Time: " + score;
@@ -73,11 +72,9 @@ function checkAnswer(event) {
     if (answer.dataset.correct === "true") {
         correctDisplay.setAttribute("style", "display:block");
         correctDisplay.textContent = "Correct";
-        //TODO: make correctDisplay dissapear after 3 seconds
     } else {
         correctDisplay.setAttribute("style", "display:block");
         correctDisplay.textContent = "Incorrect";
-        //TODO make incorrect answer subtract 10 from score
         score -= 10
         timerEl.textContent = "Time: " + score;
     }
