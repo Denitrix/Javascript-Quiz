@@ -1,7 +1,3 @@
-* {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
 :root {
     --primary: rgb(99, 4, 99);
     --secondary: rgb(137, 0, 150);
@@ -15,6 +11,7 @@
 body {
     color: var(--text);
     background-color: var(--background);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 header {
@@ -28,18 +25,18 @@ header {
     text-decoration: none;
 }
 
-/* #time {
-
-} */
-
 #startCard {
     display: block;
     text-align: center;
 }
 
+#startCard h1 {
+    margin: 10px;
+}
+
 #startCard p {
     font-size: 16px;
-    margin: 0px 20%;
+    margin: 0px 20% 8px 20%;
 }
 
 #startCard button {
@@ -138,6 +135,32 @@ header {
     color: var(--tertiary);
     /* margin: 10px 100%; */
     /* margin: 100px 100px; */
+}
+
+#failCard {
+    display: block;
+    text-align: center;
+    margin: 0px 25%;
+}
+
+#failCard h2 {
+    margin: 10px;
+}
+
+#failCard p {
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 15%;
+}
+
+#failCard button {
+    font-size: 20px;
+    margin: 3px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--button-text);
 }
 
 #scoresCard {
