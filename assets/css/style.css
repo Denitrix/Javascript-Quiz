@@ -1,11 +1,11 @@
 :root {
-    --primary: rgb(99, 4, 99);
-    --secondary: rgb(137, 0, 150);
-    --secondaryTransluscent: rgb(137, 0, 150, 0.3);
-    --tertiary: lightgrey;
-    --text: black;
-    --button-text: white;
-    --background: white;
+    --primary: #053225;
+    --secondary: #169873;
+    --secondaryTransluscent: rgb(22, 152, 115, 0.3);
+    --tertiary: #CCDBDC;
+    --text: #14110F;
+    --button-text: #CCDBDC;
+    --background: #666A86;
 }
 
 body {

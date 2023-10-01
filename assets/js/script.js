@@ -253,8 +253,8 @@ function question5() {
     answer4.textContent = "console.log";
     answer1.dataset.correct = false;
     answer2.dataset.correct = false;
-    answer3.dataset.correct = true;
-    answer4.dataset.correct = false;
+    answer3.dataset.correct = false;
+    answer4.dataset.correct = true;
 }
 
 init();
