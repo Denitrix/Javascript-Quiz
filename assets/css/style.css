@@ -18,6 +18,7 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 10px 15px;
+    font-size: 16px;
 }
 
 #previousScores {
@@ -30,32 +31,37 @@ header {
     text-align: center;
 }
 
-#startCard h1 {
+h1 {
+    font-size: 32px;
+}
+
+h2{
+    font-size: 24px;
+}
+
+h1,h2 {
     margin: 10px;
 }
 
-#startCard p {
+p {
     font-size: 16px;
     margin: 0px 20% 8px 20%;
 }
 
-#startCard button {
-    font-size: 20px;
+.btn {
+    font-size: 16px;
     margin: 3px;
-    padding: 8px 16px;
+    padding: 4px 12px;
     border-radius: 5px;
     border: none;
     background-color: var(--primary);
     color: var(--button-text);
+    text-decoration: none;
 }
 
-#startCard button:hover {
+.btn:hover {
     background-color: var(--secondary);
     cursor: pointer;
-}
-
-#questionCard {
-    display: block;
 }
 
 #question {
@@ -73,23 +79,17 @@ header {
     list-style-position: inside;
     font-size: 16px;
     padding: 0%;
-    /* margin-right: 100%; */
 }
 
 #answers li {
     margin: 3px 50% 3px 25%;
     padding: 5px;
     padding-right: 40px;
-    border-radius: 5px;
+    /* border-radius: 5px;
     background-color: var(--primary);
-    color: var(--button-text);
+    color: var(--button-text); */
     /* max-height: 50px; */
     text-align: start;
-}
-
-#answers li:hover {
-    background-color: var(--secondary);
-    cursor: pointer;
 }
 
 #endCard {
@@ -98,69 +98,20 @@ header {
     margin: 0px 25%;
 }
 
-#endCard h2 {
-    margin: 10px;
-}
-
-#endCard p {
-    text-align: center;
-    font-size: 16px;
-    margin: 0px 15%;
-}
-
-#submit {
-    font-size: 16px;
-    margin: 3px;
-    padding: 4px 12px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--primary);
-    color: var(--button-text);
-}
-
-#submit:hover {
-    background-color: var(--secondary);
-    cursor: pointer;
-}
-
 #correct {
     display: block;
     text-indent: 10px;
     font-style: italic;
-    /* max-height: 20px; */
     margin-left: 25%;
     margin-right: 20%;
-    font-size: 20px;
     border-top: 2px solid var(--tertiary);
     color: var(--tertiary);
-    /* margin: 10px 100%; */
-    /* margin: 100px 100px; */
 }
 
 #failCard {
     display: block;
     text-align: center;
     margin: 0px 25%;
-}
-
-#failCard h2 {
-    margin: 10px;
-}
-
-#failCard p {
-    text-align: center;
-    font-size: 16px;
-    margin: 0px 15%;
-}
-
-#failCard button {
-    font-size: 20px;
-    margin: 3px;
-    padding: 8px 16px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--primary);
-    color: var(--button-text);
 }
 
 #scoresCard {
@@ -176,23 +127,50 @@ header {
 #scores li {
     max-width: 140px;
     margin: 3px;
+    padding-right: 50%;
     background-color: var(--secondaryTransluscent);
     list-style-position: inside;
-    /* text-align: start; */
 }
 
-.btn {
-    font-size: 20px;
-    margin: 3px;
-    padding: 8px 16px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--primary);
-    color: var(--button-text);
-    text-decoration: none;
+@media screen and (max-width: 768px) {
+    header, p, label, .btn, li{
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+    
+    #initials {
+        width: 130px;
+    }
 }
 
-.btn:hover {
-    background-color: var(--secondary);
-    cursor: pointer;
+@media screen and (max-width: 425px) {
+    header, p, label, .btn, li {
+        font-size: 6px;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 10px;
+    }
+
+    .btn {
+        margin: 1px;
+        padding: 2px 6px;
+        border-radius: 2px;
+    }
+    
+    #initials {
+        width: 75px;
+        height: 8px;
+    }
 }
