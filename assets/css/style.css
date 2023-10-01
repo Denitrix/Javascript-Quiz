@@ -3,14 +3,18 @@
 }
 
 :root {
-    --button-background: rgb(99, 4, 99);
-    --alt-color: rgb(137, 0, 150);
+    --primary: rgb(99, 4, 99);
+    --secondary: rgb(137, 0, 150);
+    --secondaryTransluscent: rgb(137, 0, 150, 0.3);
+    --tertiary: lightgrey;
+    --text: black;
     --button-text: white;
-    --correct-color: lightgrey;
-    --show-start: block;
-    --show-end: block;
-    --show-question: block;
-    --show-correct: block;
+    --background: white;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--background);
 }
 
 header {
@@ -20,7 +24,8 @@ header {
 }
 
 #previousScores {
-    color: var(--alt-color);
+    color: var(--secondary);
+    text-decoration: none;
 }
 
 /* #time {
@@ -28,7 +33,7 @@ header {
 } */
 
 #startCard {
-    display: var(--show-start);
+    display: block;
     text-align: center;
 }
 
@@ -43,17 +48,17 @@ header {
     padding: 8px 16px;
     border-radius: 5px;
     border: none;
-    background-color: var(--button-background);
+    background-color: var(--primary);
     color: var(--button-text);
 }
 
 #startCard button:hover {
-    background-color: var(--alt-color);
+    background-color: var(--secondary);
     cursor: pointer;
 }
 
 #questionCard {
-    display: var(--show-question);
+    display: block;
 }
 
 #question {
@@ -79,19 +84,19 @@ header {
     padding: 5px;
     padding-right: 40px;
     border-radius: 5px;
-    background-color: var(--button-background);
+    background-color: var(--primary);
     color: var(--button-text);
     /* max-height: 50px; */
     text-align: start;
 }
 
 #answers li:hover {
-    background-color: var(--alt-color);
+    background-color: var(--secondary);
     cursor: pointer;
 }
 
 #endCard {
-    display: var(--show-end);
+    display: block;
     text-align: center;
     margin: 0px 25%;
 }
@@ -112,26 +117,59 @@ header {
     padding: 4px 12px;
     border-radius: 5px;
     border: none;
-    background-color: var(--button-background);
+    background-color: var(--primary);
     color: var(--button-text);
 }
 
 #submit:hover {
-    background-color: var(--alt-color);
+    background-color: var(--secondary);
     cursor: pointer;
 }
 
 #correct {
-    display: var(--show-correct);
+    display: block;
     text-indent: 10px;
     font-style: italic;
     /* max-height: 20px; */
     margin-left: 25%;
     margin-right: 20%;
     font-size: 20px;
-    border-top: 2px solid var(--correct-color);
-    color: var(--correct-color);
+    border-top: 2px solid var(--tertiary);
+    color: var(--tertiary);
     /* margin: 10px 100%; */
     /* margin: 100px 100px; */
 }
 
+#scoresCard {
+    display: block;
+    margin: 5% 30% 0%;
+
+}
+
+#scoresCard ol{
+    padding: 0%;
+}
+
+#scores li {
+    max-width: 140px;
+    margin: 3px;
+    background-color: var(--secondaryTransluscent);
+    list-style-position: inside;
+    /* text-align: start; */
+}
+
+.btn {
+    font-size: 20px;
+    margin: 3px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--button-text);
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+    cursor: pointer;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>Javascript Quiz</title>
+    </head>
+    <body>
+        <main id="scoresCard">
+            <h1>High Scores</h1>
+            <ol id="scores">
+            </ol>
+            <a href="index.html" class="btn">Go Back</a>
+            <button class="btn" id="clearButton">Clear High Scores</button>
+        </main>
+        <script>
+            var clear = document.querySelector("#clearButton");
+            var highScores = document.querySelector("#scores");
+
+            
+
+            function getScores() {
+                var scores = JSON.parse(localStorage.getItem("scores"));
+                /* while (scores.length > 10) {
+                    scores.pop();
+                } */
+                for (i = 0; i < scores.length; i ++) {
+                    var scoreEl = document.createElement("li");
+                    scoreEl.textContent = scores[i];
+                    highScores.appendChild(scoreEl);
+                }
+            }
+
+            getScores();
+
+            clear.addEventListener("click", function() {
+                localStorage.clear();
+                highScores.innerHTML = "";
+                console.log("High scores cleared.")
+            })
+        </script>
+    </body>
+</html>

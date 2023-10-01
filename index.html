@@ -8,9 +8,9 @@
     </head>
     <body>
         <header>
-            <div id="previousScores">
+            <a href="scores.html" id="previousScores">
                 View High Scores
-            </div>
+            </a>
             <div id="time">
                 Time: 75
             </div>
@@ -24,7 +24,8 @@
             <button>Start Quiz</button>
         </div>
         <div id="questionCard">
-            <h1 id="question">Temp temp temp temp temp temp temp temp?</h1>
+            <!-- TODO: Fix styles of q5 -->
+            <h1 id="question" data-number="0">Temp temp temp temp temp temp temp temp?</h1>
             <ol id="answers">
                 <li data-correct="false">temp</li>                
                 <li data-correct="false">temptemp</li>                
@@ -43,6 +44,6 @@
         </div>
         <b></b>
         <div id="correct">Incorrect</div>
-        <script src="script.js"></script>
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>
