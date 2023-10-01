@@ -38,6 +38,7 @@ function timer() {
     score -= 1;
     timerEl.textContent = "Time: " + score;
     if (score <= 0) {
+        timerEl.textContent = "Time: " + 0;
         quizFailed();
     }
 }
@@ -196,6 +197,7 @@ function checkAnswer(event) {
         score -= 10
         timerEl.textContent = "Time: " + score;
         if (score <= 0) {
+            timerEl.textContent = "Time: " + 0;
             quizFailed();
         }
         // console.log("Incorrect")
