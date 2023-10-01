@@ -166,24 +166,6 @@ function submitScore(event) {
     }
 }
 
-/* function submitScore(event) {
-    event.preventDefault();
-    var input = document.querySelector("#initials");
-    var newScore = input.value + " - " + score;
-    var oldScores = JSON.parse(localStorage.getItem("scores"));
-    console.log("oldScores1: " + oldScores + localStorage.getItem("scores"));
-    if (oldScores == null) {
-        oldScores = [newScore];
-        console.log("oldScores2: " + oldScores);
-        localStorage.setItem("scores",JSON.stringify(oldScores));
-    } else {
-        console.log("oldScores3: " + oldScores);
-        oldScores.push(newScore);
-        console.log("oldScores4: " + oldScores);
-        localStorage.setItem("scores",JSON.stringify(oldScores));
-    }
-} */
-
 function checkAnswer(event) {
     var answer = event.target;
     // console.log("Selected answer: " + answer.textContent)
