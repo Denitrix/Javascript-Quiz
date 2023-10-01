@@ -9,17 +9,21 @@ var answer2 = answers.children[1];
 var answer3 = answers.children[2];
 var answer4 = answers.children[3];
 var endCard = document.querySelector("#endCard");
+var failCard = document.querySelector("#failCard");
+var retry = document.querySelector("#retry")
 var correctDisplay = document.querySelector("#correct");
 var submit = document.querySelector("#submit")
 var unusedQuestions = [1,2,3,4,5];
-var score = 75;
+var score = 0;
 var scoreTimer = null;
 
 function init() {
     startCard.setAttribute("style", "display:block");
     questionCard.setAttribute("style", "display:none");
     endCard.setAttribute("style", "display:none");
+    failCard.setAttribute("style", "display:none");
     correctDisplay.setAttribute("style", "display:none");
+    score = 75;
     timerEl.textContent = "Time: " + score;
 }
 
@@ -33,6 +37,9 @@ function startQuiz() {
 function timer() {
     score -= 1;
     timerEl.textContent = "Time: " + score;
+    if (score <= 0) {
+        quizFailed();
+    }
 }
 
 function randomQuestion() {
@@ -54,6 +61,13 @@ function randomQuestion() {
     } else {
         endQuiz();
     }
+}
+
+function quizFailed() {
+    failCard.setAttribute("style", "display:block");
+    questionCard.setAttribute("style", "display:none");
+    timerEl.textContent = "Time: " + score;
+    clearInterval(scoreTimer);
 }
 
 function endQuiz() {
@@ -181,6 +195,9 @@ function checkAnswer(event) {
         correctDisplay.textContent = "Incorrect";
         score -= 10
         timerEl.textContent = "Time: " + score;
+        if (score <= 0) {
+            quizFailed();
+        }
         // console.log("Incorrect")
     }
     randomQuestion();
@@ -260,3 +277,4 @@ init();
 startButton.addEventListener("click",startQuiz);
 answers.addEventListener("click",checkAnswer);
 submit.addEventListener("click",submitScore);
+retry.addEventListener("click", init);
