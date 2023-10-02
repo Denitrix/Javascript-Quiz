@@ -26,7 +26,9 @@
                 } */
                 for (i = 0; i < scores.length; i ++) {
                     var scoreEl = document.createElement("li");
-                    scoreEl.textContent = scores[i];
+                    var name = scores[i].name;
+                    var score = scores[i].score;
+                    scoreEl.textContent = name + " - " + score;
                     highScores.appendChild(scoreEl);
                 }
             }
