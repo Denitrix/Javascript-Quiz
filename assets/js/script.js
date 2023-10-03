@@ -206,35 +206,6 @@ function checkAnswer(event) {
   randomQuestion();
 }
 
-function question1() {
-  question.dataset.number = 1;
-  // console.log("Question number: " + question.dataset.number)
-  question.textContent = "Commonly used data types do NOT include: ";
-  answer1.textContent = "strings";
-  answer2.textContent = "booleans";
-  answer3.textContent = "alerts";
-  answer4.textContent = "numbers";
-  answer1.dataset.correct = false;
-  answer2.dataset.correct = false;
-  answer3.dataset.correct = true;
-  answer4.dataset.correct = false;
-}
-
-function question2() {
-  question.dataset.number = 2;
-  // console.log("Question number: " + question.dataset.number)
-  question.textContent =
-    "The condition in an if / else statement is enclosed with _______.";
-  answer1.textContent = "quotes";
-  answer2.textContent = "curly brackets";
-  answer3.textContent = "parenthesis";
-  answer4.textContent = "square brackets";
-  answer1.dataset.correct = false;
-  answer2.dataset.correct = false;
-  answer3.dataset.correct = true;
-  answer4.dataset.correct = false;
-}
-
 init();
 startButton.addEventListener("click", startQuiz);
 answers.addEventListener("click", checkAnswer);
