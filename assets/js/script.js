@@ -59,6 +59,7 @@ var questions = [
 ];
 
 function init() {
+  //initilization function that resets display and resets global variables
   startCard.setAttribute("style", "display:block");
   questionCard.setAttribute("style", "display:none");
   endCard.setAttribute("style", "display:none");
@@ -114,6 +115,7 @@ function init() {
 }
 
 function startQuiz() {
+  //hides start screen, starts timer, displays the questionCard, and runs randomQuestion
   startCard.setAttribute("style", "display:none");
   questionCard.setAttribute("style", "display:block");
   scoreTimer = setInterval(timer, 1000);
@@ -121,6 +123,7 @@ function startQuiz() {
 }
 
 function timer() {
+  //decreases and updates timer and if timer is below 0 runs quizFailed
   score -= 1;
   timerEl.textContent = "Time: " + score;
   if (score <= 0) {
@@ -130,6 +133,7 @@ function timer() {
 }
 
 function randomQuestion() {
+  //selects and displays a random question from the questions array, and removes it from the array, if questions array is empty runs endQuiz
   if (questions.length == 0) {
     endQuiz();
   } else {
@@ -152,13 +156,15 @@ function randomQuestion() {
 }
 
 function quizFailed() {
+  //shows quiz failed screen and stops timer
   failCard.setAttribute("style", "display:block");
   questionCard.setAttribute("style", "display:none");
-  timerEl.textContent = "Time: " + score;
+  timerEl.textContent = "Time: " + 0;
   clearInterval(scoreTimer);
 }
 
 function endQuiz() {
+  //shows quiz complete screen and final score
   endCard.setAttribute("style", "display:block");
   questionCard.setAttribute("style", "display:none");
   timerEl.textContent = "Time: " + score;
@@ -167,6 +173,7 @@ function endQuiz() {
 }
 
 function submitScore(event) {
+  //gets input from initials text input, stores it with the score to an array, sorts the array, if array is longer than 10 scores removes lowest scores, and updates the local storage item
   event.preventDefault();
   var input = document.querySelector("#initials");
   var name = input.value;
@@ -183,6 +190,7 @@ function submitScore(event) {
 }
 
 function checkAnswer(event) {
+  //checks if the selected answer is correct using data-correct, if correct displays correct indicator, if incorrect displays incorrect indicator and reduces score by 10, then runs randomQuestion
   var answer = event.target;
   // console.log("Selected answer: " + answer.textContent)
   if (answer.dataset.correct === "true") {
